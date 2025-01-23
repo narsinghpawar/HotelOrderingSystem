@@ -326,7 +326,7 @@ main {
 
 /* Main Section */
 .main-section {
-    background-image: url('/image/bowl-garnish-placed-table-with-vegetables.jpg');
+    background-image: url('image/bowl-garnish-placed-table-with-vegetables.jpg');
     /* Background image */
     background-size: cover;
     /* Cover the entire section */
