@@ -675,6 +675,43 @@ main {
     background-color: #ff5722;
 }
 
+@media (max-width: 768px) {
+    .table {
+        display: block; /* Force block display */
+        width: 100%;
+        border: 0; /* Remove table borders */
+    }
+
+    .table thead {
+        display: none; /* Hide headers */
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .table td {
+        display: flex; /* Flex layout for each cell */
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        text-align: left;
+        border: none; /* Remove cell borders */
+    }
+
+    .table td:before {
+        content: attr(data-label); /* Dynamically add header labels */
+        font-weight: bold;
+        flex-basis: 40%; /* Label occupies 40% of row */
+        color: #ff5722;
+        padding-right: 10px;
+        text-transform: capitalize;
+    }
+}
+
+
 .modal-footer {
     display: flex;
     justify-content: flex-end;
@@ -1048,7 +1085,8 @@ main {
 
   .search-box {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      
   }
 
   .search-box input {
@@ -1132,6 +1170,50 @@ main {
       background: #fff;
   }
 
+  /* Responsive styles for dropdown in small devices */
+  @media (max-width: 768px) {
+      .table td {
+          display: flex;
+          flex-direction: column;
+          /* Stack content vertically */
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 10px;
+          /* Add padding for better readability */
+          border: 1px solid #ddd;
+          /* Add border for clarity */
+      }
+
+      .table td:before {
+          content: attr(data-label);
+          /* Display the label as pseudo-content */
+          font-weight: bold;
+          margin-bottom: 5px;
+          /* Add spacing below the label */
+          color: #ff5722;
+          /* Highlight the label */
+          text-transform: capitalize;
+      }
+
+      .status-dropdown {
+          width: 80%;
+          /* Make the dropdown take the full width of the container */
+          padding: 8px;
+          /* Add padding inside the dropdown */
+          font-size: 14px;
+          /* Adjust font size for smaller screens */
+          border: 1px solid #ddd;
+          /* Add a border */
+          border-radius: 4px;
+          /* Slightly rounded corners */
+      }
+
+      .status-dropdown option {
+          font-size: 14px;
+          /* Adjust font size for dropdown options */
+      }
+  }
+
   /* Responsive Styles */
   @media (max-width: 768px) {
       .styled-table thead {
@@ -1162,5 +1244,6 @@ main {
 
       .search-box input {
           font-size: 0.9rem;
+          margin: 25px;
       }
   }
