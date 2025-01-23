@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+
+    <script src="/script/script.js"></script>
+    <!-- External CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="hamburger" onclick="toggleNav()">
+        <i class="fa fa-bars"></i>
+    </div>
+    <!-- Header Section -->
+    <header class="nav-header">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="/image/logo.png" alt="Logo" />
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="landing.html">Home</a>
+            <a href="#">About</a>
+            <a href="menu.html">Menu</a>
+        </nav>
+
+        <!-- Search Bar and Icons Section -->
+        <div class="nav-actions">
+
+            <!-- Search and Icons Section -->
+            <div class="nav-actions">
+                <!-- Dropdown Select -->
+                <div class="header-dropdown">
+                    <select id="headerDropdown" class="custom-select">
+                        <option value="">Select Table Number</option>
+                        <option value="tab-1">Table Number-01</option>
+                        <option value="tab-2">Table Number-02</option>
+                        <option value="tab-3">Table Number-03</option>
+                    </select>
+                </div>
+            <!-- Search Bar -->
+            <!--<div class="search">
+                <input type="text" placeholder="Search Here..." />
+                <button><i class="fa fa-search"></i></button>
+            </div>-->
+
+            <!-- Action Icons -->
+            <div class="icons">
+                <!-- Shopping Cart Icon -->
+                <div class="cart" onclick="openCart()">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount" >0</span>
+                </div>
+                <!-- User Profile Icon -->
+                <div class="profile">
+                    <i class="fa fa-user"></i>
+                    
+                </div>
+
+            <div class="notification">
+                <i class="fa fa-bell"></i>
+                <span class="notification-count" id="bell">0</span>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cart Details</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems">
+                        <!-- Dynamic Cart Rows -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeModal()">Close</button>
+                <button class="save-btn" id="checkoutButton">Check Out</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Custom Alert Modal -->
+<div id="customAlert" class="custom-alert">
+    <div class="custom-alert-content">
+        <!-- Success Checkmark -->
+        <div class="checkmark-container">
+            <span class="checkmark">&#10003;</span>
+        </div>
+        <p>Thank you! Your order will be delivered shortly.</p>
+        <button id="proceedButton">Proceed</button>
+    </div>
+</div>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>Our Menu</h2>
+        <h3>Today's Specialty</h3>
+
+        <!-- Menu Cards Container -->
+        <div class="menu-container">
+            <!-- Menu Card 1 -->
+            <div class="menu-card">
+                <div class="menu-image">
+                    <img src="/image/Pizza.jpg" alt="Pizza">
+                    <!-- Favorite Button -->
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <div class="menu-info">
+                    <h4>Pizza</h4>
+                    <p>Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.</p>
+                    <div class="menu-footer">
+                        <button class="add-to-cart-btn" onclick="addtoCart()">Add To Cart</button>
+                        <span class="price">₹12.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Card 2 -->
+            <div class="menu-card">
+                <div class="menu-image">
+                    <img src="/image/Burger.jpg" alt="Burger">
+                    <!-- Favorite Button -->
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <div class="menu-info">
+                    <h4>Burger</h4>
+                    <p>Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.</p>
+                    <div class="menu-footer">
+                        <button class="add-to-cart-btn" onclick="addtoCart()">Add To Cart</button>
+                        <span class="price">₹12.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Card 3 -->
+            <div class="menu-card">
+                <div class="menu-image">
+                    <img src="/image/Pancake.jpg" alt="Pancakes">
+                    <!-- Favorite Button -->
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <div class="menu-info">
+                    <h4>Pancake</h4>
+                    <p>Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.</p>
+                    <div class="menu-footer">
+                        <button class="add-to-cart-btn" onclick="addtoCart()">Add To Cart</button>
+                        <span class="price">₹12.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Follow Us:</p>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#"><img src="/image/face_book_logo.png" alt="Facebook" /></a>
+                <a href="#"><img src="/image/t_outer_logo.jpg" alt="Twitter" /></a>
+                <a href="#"><img src="/image/instagram_logo.png" alt="Instagram" /></a>
+            </div>
+        </div>
+    </footer>
+   
+</body>
+
+</html>

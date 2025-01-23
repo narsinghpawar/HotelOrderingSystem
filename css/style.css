@@ -1,0 +1,1166 @@
+/* General Reset */
+* {
+    margin: 0;
+    /* Remove default margins */
+    padding: 0;
+    /* Remove default padding */
+    box-sizing: border-box;
+    /* Ensure padding and border are included in element's dimensions */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* Set default font family */
+    margin: 0;
+    /* Remove body margin */
+    padding: 0;
+    /* Remove body padding */
+}
+
+/* Header Styles */
+.nav-header {
+    display: flex;
+    /* Flexbox for horizontal layout */
+    align-items: center;
+    /* Vertically center items */
+    justify-content: space-between;
+    /* Space out items horizontally */
+    padding: 10px 20px;
+    /* Add padding around header */
+    background: white;
+    /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    width: 100%;
+    /* Ensure it spans the full width */
+}
+
+.logo img {
+    height: 50px;
+    /* Set logo height */
+    width: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    /* Flexbox for horizontal layout */
+    gap: 20px;
+    /* Space between links */
+    position: relative;
+    /* Relative for pseudo-elements */
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* Remove underline */
+    color: #121212;
+    /* Black text color */
+    font-size: 16px;
+    /* Set font size */
+    font-weight: bold;
+    /* Bold text */
+    position: relative;
+    /* Relative for hover effect */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: color 0.3s ease-in-out;
+    /* Smooth color transition */
+}
+
+/* Underline effect on hover */
+.nav-links a::after {
+    content: "";
+    /* Empty content for underline */
+    position: absolute;
+    /* Position relative to link */
+    left: 0;
+    /* Start at left */
+    bottom: 0;
+    /* Align at bottom */
+    width: 0;
+    /* Initially hidden */
+    height: 2px;
+    /* Set underline height */
+    background-color: orange;
+    /* Underline color */
+    transition: width 0.3s ease-in-out;
+    /* Smooth width transition */
+}
+
+.nav-links a:hover {
+    color: orange;
+    /* Change text color on hover */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    /* Expand underline on hover */
+}
+
+/* Navigation Actions (Search and Icons) */
+.nav-actions {
+    display: flex;
+    /* Flexbox for horizontal layout */
+    align-items: center;
+    /* Vertically center items */
+    gap: 20px;
+    /* Space between elements */
+}
+
+/* Search Box */
+.search {
+    display: flex;
+    /* Flexbox for search layout */
+    align-items: center;
+    /* Center items vertically */
+    background: #f1f1f1;
+    /* Light gray background */
+    border-radius: 30px;
+    /* Rounded edges */
+    padding: 5px 10px;
+    /* Inner padding */
+}
+
+.search input {
+    border: none;
+    /* Remove border */
+    outline: none;
+    /* Remove focus outline */
+    background: transparent;
+    /* Transparent background */
+    font-size: 14px;
+    /* Set font size */
+    padding: 5px;
+    /* Inner padding */
+    width: 120px;
+    /* Input width */
+}
+
+.search button {
+    border: none;
+    /* Remove border */
+    background: none;
+    /* Transparent background */
+    color: orange;
+    /* Button text color */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+/* Action Icons */
+.icons {
+    display: flex;
+    /* Flexbox for layout */
+    align-items: center;
+    /* Center items vertically */
+    gap: 15px;
+    /* Space between icons */
+    cursor: pointer;
+    position: relative;
+}
+
+.icons .cart,
+.icons .profile 
+.icons .notification
+{
+    background: #f1f1f1;
+    /* Light gray background */
+    border-radius: 50%;
+    /* Circular shape */
+    width: 40px;
+    /* Fixed width */
+    height: 40px;
+    /* Fixed height */
+    display: flex;
+    /* Flexbox for centering */
+    align-items: center;
+    /* Center icon vertically */
+    justify-content: center;
+    /* Center icon horizontally */
+    position: relative;
+    /* Position for badge */
+}
+
+
+
+.cart-count {
+    position: absolute;
+    /* Positioned relative to parent */
+    top: -5px;
+    /* Slightly above icon */
+    right: -5px;
+    /* Slightly to the right of icon */
+    background: orange;
+    /* Badge background color */
+    color: white;
+    /* Text color */
+    font-size: 12px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    border-radius: 50%;
+    /* Circular badge */
+    padding: 2px 6px;
+    /* Inner padding */
+}
+
+/* Notification Count Styling */
+.notification-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Hide navigation links on small screens */
+    }
+
+    .nav-actions {
+        gap: 10px;
+        /* Reduce spacing */
+    }
+
+    .search input {
+        width: 80px;
+        /* Reduce input width */
+    }
+}
+
+@media (max-width: 480px) {
+    .search input {
+        display: none;
+        /* Hide input on very small screens */
+    }
+
+    .nav-header {
+        padding: 10px;
+        /* Reduce header padding */
+    }
+}
+
+/* Main Content Section */
+main {
+    flex: 1;
+    /* Expand to fill available space */
+    padding: 20px;
+    /* Add padding for spacing */
+    margin-top: 20px;
+    /* Separate from header */
+    background-color: #f9f9f9;
+    /* Light gray background */
+}
+
+/* Footer Styling */
+.footer {
+    color: #121212;
+    /* Black text color */
+    padding: 20px;
+    /* Add padding */
+    text-align: center;
+    /* Center text */
+    font-weight: bold;
+    /* Bold text */
+    background: white;
+    /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    width: 100%;
+    /* Full width */
+}
+
+.footer-content p {
+    font-size: 18px;
+    /* Font size */
+    margin-bottom: 10px;
+    /* Spacing below paragraph */
+    font-weight: bold;
+    /* Bold text */
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    /* Flexbox for layout */
+    justify-content: center;
+    /* Center icons */
+    align-items: center;
+    /* Align icons vertically */
+    gap: 10px;
+    /* Space between icons */
+    
+    
+}
+
+.social-icons a img {
+    width: 25px;
+    /* Icon size */
+    height: 25px;
+    /* Icon size */
+    border-radius: 50%;
+    /* Circular icons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow */
+}
+
+/* Main Section */
+.main-section {
+    background-image: url('/image/bowl-garnish-placed-table-with-vegetables.jpg');
+    /* Background image */
+    background-size: cover;
+    /* Cover the entire section */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* No repeat */
+    height: 68vh;
+    /* Set height to 68% of viewport */
+    color: #121212;
+    /* Text color */
+    text-align: center;
+    /* Center text */
+    display: flex;
+    /* Flexbox for centering content */
+    flex-direction: column;
+    /* Vertical layout */
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    overflow-y: hidden;
+    /* Hide vertical overflow */
+    margin: 0;
+    /* Remove margin */
+    padding: 0;
+    /* Remove padding */
+}
+
+/* Custom Buttons */
+.custom-button {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    padding: 10px 20px;
+    /* Inner padding */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: all 0.3s ease-in-out;
+    /* Smooth hover effect */
+}
+
+.custom-button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+    transform: scale(1.05);
+    /* Slightly increase size */
+}
+
+.custom-button:active {
+    background-color: #3e8e41;
+    /* Even darker green on click */
+    transform: scale(1);
+    /* Reset size on click */
+}
+
+.main-section button {
+    background-color: #ff5722;
+    /* Vibrant orange background */
+    color: #fff;
+    /* White text color */
+    border: none;
+    /* Remove border */
+    padding: 10px 20px;
+    /* Inner padding */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    border-radius: 8px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: all 0.3s ease-in-out;
+    /* Smooth hover effect */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.main-section button:hover {
+    background-color: #e64a19;
+    /* Darker orange on hover */
+    transform: translateY(-2px);
+    /* Slightly lift button */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow */
+}
+
+.main-section button:active {
+    background-color: #d84315;
+    /* Even darker orange on click */
+    transform: translateY(0);
+    /* Reset position */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Restore original shadow */
+}
+
+/* Menu Section */
+.menu-section {
+    text-align: center;
+    /* Center text */
+    padding: 40px 20px;
+    /* Padding around section */
+    background-color: #f9f9f9;
+    font-weight: bold;
+    /* Light gray background */
+}
+
+.menu-section h2 {
+    font-size: 24px;
+    /* Section title size */
+    color: #555;
+    /* Gray text color */
+    margin-bottom: 10px;
+    /* Space below title */
+    text-transform: uppercase;
+    /* Uppercase text */
+}
+
+.menu-section h3 {
+    font-size: 20px;
+    /* Subtitle size */
+    color: #333;
+    /* Dark gray text color */
+    margin-bottom: 20px;
+    /* Space below subtitle */
+}
+
+.menu-container {
+    display: grid;
+    /* Grid layout for menu cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsive columns */
+    gap: 20px;
+    /* Space between cards */
+    justify-content: center;
+    /* Center grid */
+}
+
+.menu-card {
+    background-color: #fff;
+    /* White background */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    overflow: hidden;
+    /* Hide overflow */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    /* Lift card on hover */
+}
+
+.menu-image {
+    position: relative;
+    /* Relative for favorite button */
+}
+
+.menu-image img {
+    width: 100%;
+    /* Full width */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.favorite-btn {
+    position: absolute;
+    /* Positioned over image */
+    top: 10px;
+    /* Top spacing */
+    right: 10px;
+    /* Right spacing */
+    background: #fff;
+    /* White background */
+    border: none;
+    /* Remove border */
+    border-radius: 50%;
+    /* Circular shape */
+    padding: 8px;
+    /* Inner padding */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 16px;
+    /* Font size */
+    color: #ff5722;
+    /* Button text color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    transition: background 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.favorite-btn:hover {
+    background: #ff5722;
+    /* Orange background on hover */
+    color: #fff;
+    /* White text on hover */
+}
+
+.menu-info {
+    padding: 20px;
+    /* Inner padding */
+    text-align: left;
+    /* Left-align text */
+}
+
+.menu-info h4 {
+    font-size: 18px;
+    /* Title font size */
+    color: #333;
+    /* Dark gray text */
+    margin-bottom: 10px;
+    /* Space below title */
+}
+
+.menu-info p {
+    font-size: 14px;
+    /* Description font size */
+    color: #777;
+    /* Light gray text */
+    margin-bottom: 20px;
+    /* Space below description */
+    line-height: 1.5;
+    /* Line spacing */
+}
+
+.menu-footer {
+    display: flex;
+    /* Flexbox for layout */
+    justify-content: space-between;
+    /* Space out content */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.add-to-cart-btn {
+    background: #ff5722;
+    /* Orange background */
+    border: none;
+    /* Remove border */
+    color: #fff;
+    /* White text */
+    padding: 10px 20px;
+    /* Inner padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 14px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    transition: background 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.add-to-cart-btn:hover {
+    background: #ff5722;
+    /* Keep orange background */
+}
+
+.price {
+    font-size: 18px;
+    /* Price font size */
+    font-weight: bold;
+    /* Bold text */
+    color: #333;
+    /* Dark gray text */
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.modal-content {
+    background-color: rgb(69, 67, 67);
+    border-radius: 8px;
+    padding: 20px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close {
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #ff5722;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.modal-footer button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer .close-btn {
+    background-color: #f44336;
+    color: white;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.modal-footer .save-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Custom Alert Overlay */
+.custom-alert {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
+    z-index: 1000;
+    /* Bring it on top of other elements */
+    
+}
+
+/* Custom Alert Content */
+.custom-alert-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Success Checkmark Container */
+.checkmark-container {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px;
+    /* Center the checkmark container */
+    border: 2px solid #4caf50;
+    /* Green border */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6f7e6;
+    /* Light green background */
+}
+
+/* Success Checkmark */
+.checkmark {
+    font-size: 24px;
+    color: #4caf50;
+    /* Green color */
+    font-weight: bold;
+}
+
+/* Custom Alert Text */
+.custom-alert-content p {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Custom Button Styling */
+.custom-alert-content button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+     font-weight: bold;
+}
+
+.custom-alert-content button:hover {
+    background-color: #45a049;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        /* Increase modal width on smaller screens */
+    }
+
+    .table th,
+    .table td {
+        font-size: 12px;
+        /* Reduce font size for smaller screens */
+    }
+
+    .modal-header h2 {
+        font-size: 16px;
+        /* Reduce header font size */
+    }
+
+    .modal-footer button {
+        font-size: 12px;
+        /* Reduce button font size */
+        padding: 6px 12px;
+        /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .table th,
+    .table td {
+        font-size: 10px;
+        /* Further reduce font size */
+        padding: 6px;
+        /* Adjust padding */
+    }
+
+    .modal-footer button {
+        font-size: 10px;
+        /* Further reduce button font size */
+        padding: 4px 10px;
+        /* Adjust padding */
+    }
+}
+
+
+/* Base Styles for Mobile Side Navigation */
+@media (max-width: 768px) {
+
+    /* Hide the default header layout */
+    .nav-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #fff;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Hide the sidebar by default */
+        height: 100%;
+        width: 250px;
+        transition: left 0.3s ease;
+        /* Smooth transition */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    /* Show the sidebar when active */
+    .nav-header.active {
+        left: 0;
+    }
+
+    /* Logo alignment */
+    .nav-header .logo {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Navigation links as a vertical list */
+    .nav-header .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-header .nav-links a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    /* Search bar styles */
+    .nav-header .search {
+        display: flex;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .nav-header .search input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .nav-header .search button {
+        padding: 8px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 0 4px 4px 0;
+    }
+
+    /* Icons section */
+    .nav-header .icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+}
+
+.hamburger,
+.icons {
+    display: none;
+    /* Hide by default */
+}
+
+/* Show hamburger menu only on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Show on smaller screens */
+    }
+}
+
+/* Show icons only on larger screens */
+@media (min-width: 769px) {
+    .icons {
+        display: flex;
+        /* Show icons on larger screens */
+    }
+}
+
+
+/* Style for the dropdown container */
+.header-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/* Dropdown Container */
+.header-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    width: 100%;
+    /* Ensure it uses full width */
+    max-width: 300px;
+    /* Max width for larger screens */
+}
+
+/* Dropdown Styles */
+.custom-select {
+    appearance: none;
+    /* Make it responsive */
+    max-width: 100%;
+    /* Prevent overflow */
+    background-color: #f5f5f5;
+    /* Background color */
+    border: 1px solid #ccc;
+    /* Border style */
+    border-radius: 5px;
+    padding: 10px 12px;
+    /* Padding for better spacing */
+    font-size: 14px;
+    /* Font size */
+    color: #333;
+    /* Text color */
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    font-weight: bold;
+    /* Include padding and border in width */
+}
+
+/* Style the dropdown arrow for better visibility */
+.custom-select::-ms-expand {
+    display: none;
+    /* Hide default arrow on IE/Edge */
+}
+
+.custom-select:focus {
+    border-color: #007bff;
+    /* Highlight border on focus */
+}
+
+/* Hover and Active State */
+.custom-select:hover {
+    background-color: #eaeaea;
+    /* Lighter hover background */
+}
+
+/* Media Queries for Small Screens */
+@media screen and (max-width: 768px) {
+    .header-dropdown {
+        max-width: 250px;
+        /* Adjust for smaller devices */
+        margin-left: 5px;
+    }
+
+    .custom-select {
+        font-size: 12px;
+        /* Reduce font size for smaller devices */
+        padding: 8px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-dropdown {
+        max-width: 200px;
+        /* Further adjustment for very small devices */
+        margin-left: 2px;
+    }
+
+    .custom-select {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+}
+
+
+
+  .table-container {
+      margin: 20px auto;
+      max-width: 90%;
+      overflow-x: auto;
+      /* Ensure horizontal scroll on small devices */
+  }
+
+  .search-box {
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .search-box input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+  }
+
+  .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .styled-table thead th {
+      background-color: #ff5722;
+      color: white;
+      text-align: left;
+      padding: 10px;
+  }
+
+  .styled-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+
+  .styled-table tbody tr {
+      border-bottom: 1px solid #ddd;
+  }
+
+  .styled-table tbody td {
+      padding: 10px;
+      vertical-align: middle;
+  }
+
+  /* Accordion Styles */
+  .accordion-button {
+      background-color: #fff;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      display: inline-block;
+  }
+
+  .accordion-button:hover {
+      background-color: #fff;
+  }
+
+  .accordion-content {
+      display: none;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 5px;
+  }
+
+  .accordion-content table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  .accordion-content th,
+  .accordion-content td {
+      padding: 8px;
+      border: 1px solid #ddd;
+  }
+
+  /* Dropdown Status Styling */
+  .status-dropdown {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fff;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+      .styled-table thead {
+          display: none;
+      }
+
+      .styled-table tbody tr {
+          display: block;
+          margin-bottom: 10px;
+      }
+
+      .styled-table tbody td {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+      }
+
+      .styled-table tbody td::before {
+          content: attr(data-label);
+          font-weight: bold;
+          flex: 1;
+          text-align: left;
+      }
+
+      .accordion-button {
+          font-size: 0.8rem;
+      }
+
+      .search-box input {
+          font-size: 0.9rem;
+      }
+  }

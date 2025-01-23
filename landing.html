@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/script/script.js"></script>
+</head>
+
+<body>
+    <div class="hamburger" onclick="toggleNav()">
+        <i class="fa fa-bars"></i>
+    </div>
+    <!-- Header Section -->
+    <header class="nav-header">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="/image/logo.png" alt="Logo" />
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="landing.html">Home</a>
+            <a href="#">About</a>
+            <a href="menu.html">Menu</a>
+
+            
+        </nav>
+
+        <!-- Search and Icons Section -->
+        <div class="nav-actions">
+            <!-- Dropdown Select -->
+            <div class="header-dropdown">
+                <select id="headerDropdown" class="custom-select">
+                    <option value="">Select Table Number</option>
+                    <option value="tab-1">Table Number-01</option>
+                    <option value="tab-2">Table Number-02</option>
+                    <option value="tab-3">Table Number-03</option>
+                </select>
+            </div>
+            <!-- Search Bar -->
+           <!----<div class="search">
+                <input type="text" placeholder="Search Here..." />
+                <button><i class="fa fa-search"></i></button>
+            </div>-->
+
+            <!-- Icons Section -->
+            <div class="icons">
+                <!-- Shopping Cart Icon with Count -->
+                <div class="cart" onclick="openCart()">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <!-- User Profile Icon -->
+                <div class="profile">
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cart Details</h2>
+            <button class="close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems">
+                    <!-- Dynamic Cart Rows -->
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button class="close-btn" onclick="closeModal()">Close</button>
+            <button class="save-btn" id="checkoutButton">Check Out</button>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Alert Modal -->
+<div id="customAlert" class="custom-alert">
+    <div class="custom-alert-content">
+        <!-- Success Checkmark -->
+        <div class="checkmark-container">
+            <span class="checkmark">&#10003;</span>
+        </div>
+        <p>Thank you! Your order will be delivered shortly.</p>
+        <button id="proceedButton">Proceed</button>
+    </div>
+</div>
+    <!-- Main Content Section -->
+    <main class="main-section">
+        <h1>Welcome to Our Restaurant</h1>
+        <button type="button" onclick="navigatetoMenu()">Check Our Menu</button>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Follow Us:</p>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#"><img src="/image/face_book_logo.png" alt="Facebook" /></a>
+                <a href="#"><img src="/image/t_outer_logo.jpg" alt="Twitter" /></a>
+                <a href="#"><img src="/image/instagram_logo.png" alt="Instagram" /></a>
+            </div>
+        </div>
+    </footer>
+
+   
+
+</body>
+
+</html>

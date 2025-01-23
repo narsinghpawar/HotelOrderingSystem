@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/script/script.js"></script>
+   
+</head>
+
+<body>
+    <div class="hamburger" onclick="toggleNav()">
+        <i class="fa fa-bars"></i>
+    </div>
+    <!-- Header Section -->
+    <header class="nav-header">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="/image/logo.png" alt="Logo" />
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="#">About</a>
+            <a href="orders.html">Orders</a>
+        </nav>
+        <!-- Search Bar -->
+        <!----<div class="search">
+                    <input type="text" placeholder="Search Here..." />
+                    <button><i class="fa fa-search"></i></button>
+                </div>-->
+
+        <!-- Icons Section -->
+        <div class="icons">
+            <!-- User Profile Icon -->
+            <div class="profile">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="notification">
+                <i class="fa fa-bell"></i>
+                <span class="notification-count" id="bell">0</span>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <div class="table-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search table..." onkeyup="filterTable()">
+        </div>
+        <table class="styled-table" id="dataTable">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Table number</th>
+                    <th>Order list</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="tr-01">
+                    <td data-label="Sr.no">1</td>
+                    <td data-label="Table number">Table Number-01</td>
+                    <td data-label="Order list">
+                        <button class="accordion-button" onclick="toggleAccordion(this)">View Order List</button>
+                        <div class="accordion-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>Pizza</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>Burger</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>Drinks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td data-label="Status">
+                        <select class="status-dropdown" onchange="chefFunction(this)">
+                            <option value=""></option>
+                            <option value="accepted">Accepted</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="delivered">Delivered</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="tr-02">
+                    <td data-label="Sr.no">2</td>
+                    <td data-label="Table number">Table Number-02</td>
+                    <td data-label="Order list">
+                        <button class="accordion-button" onclick="toggleAccordion(this)">View Order List</button>
+                        <div class="accordion-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>Pizza</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>Burger</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>Drinks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td data-label="Status">
+                        <select class="status-dropdown" onchange="checkFunction01(this)" >
+                            <option value=""></option>
+                            <option value="accepted">Accepted</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="delivered">Delivered</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Follow Us:</p>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#"><img src="/image/face_book_logo.png" alt="Facebook" /></a>
+                <a href="#"><img src="/image/t_outer_logo.jpg" alt="Twitter" /></a>
+                <a href="#"><img src="/image/instagram_logo.png" alt="Instagram" /></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
